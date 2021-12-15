@@ -17,6 +17,13 @@ public class stackUsingLinkedList {
 	stackUsingLinkedList() {
 		this.top = null;
 	}
+
+	// function to check if the stack is empty or not..
+
+	public boolean isEmpty() {
+		return top == null;
+	}
+
 	// function to add element
 
 	@SuppressWarnings("unused")
@@ -33,9 +40,27 @@ public class stackUsingLinkedList {
 
 	}
 
-	// Utility function to check if the stack is empty or not
-	public boolean isEmpty() {
-		return top == null;
+	// function to pop element in the stack
+	@SuppressWarnings("unused")
+	public void pop(int data) {
+
+		if (top == null) {
+			System.out.println("Linklist is empty");
+			return;
+		} else {
+			top = top.next;
+		}
+	}
+
+	// Function to perform peek operation
+
+	public int peek() {
+		if (!isEmpty()) {
+			return top.data;
+		} else {
+			System.out.println("Stack is empty");
+			return -1;
+		}
 	}
 
 	// function to display the list
@@ -63,6 +88,13 @@ public class stackUsingLinkedList {
 		list.push(70);
 		list.push(30);
 		list.push(56);
+		System.out.println("List after push operation");
 		list.display();
+		list.pop(70);
+		list.pop(30);
+		list.pop(56);
+		System.out.println("List after pop operation");
+		list.display();
+		list.peek();
 	}
 }
