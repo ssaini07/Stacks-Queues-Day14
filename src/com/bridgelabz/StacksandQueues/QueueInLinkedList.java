@@ -39,6 +39,18 @@ public class QueueInLinkedList<T> {
 		return length;
 	}
 
+	// Function to delete elements in the Queue using deQueue method.
+
+	public void deQueue(int data) {
+		if (front == null) {
+			System.out.println("Linklist is empty");
+			return;
+		} else {
+			front = front.next;
+			length--;
+		}
+	}
+
 	// Function to display elements in the Queue using show method.
 
 	public void show() {
@@ -56,7 +68,12 @@ public class QueueInLinkedList<T> {
 		queue.enQueue(56);
 		queue.enQueue(30);
 		queue.enQueue(70);
-		System.out.println("Size of the queue " + queue.size());
+		System.out.println("Before the size of the queue " + queue.size());
+		queue.show();
+		queue.deQueue(56);
+		queue.deQueue(30);
+		queue.deQueue(70);
+		System.out.println("After the size of the queue " + queue.size());
 		queue.show();
 	}
 
